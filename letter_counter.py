@@ -16,8 +16,14 @@ def letters_count(str_ex):
     return solutions
 
 
+def string_validation(string: str):
+    while len(string) == 0:
+        string = input("Zbyt krótki ciąg znaków. Podaj dłuższy: ")
+    return string
+
+
 if __name__ == "__main__":
     text = input("Podaj ciąg znaków:")
-
-    x = letters_count(text)
+    validated_text = string_validation(text)
+    x = letters_count(validated_text)
     print("".join(x))
