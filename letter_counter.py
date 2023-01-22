@@ -16,16 +16,8 @@ def letters_count(str_ex):
     return solutions
 
 
-def final_parts_add(list_of_parts):
-    solution = ""
-    for part in list_of_parts:
-        solution += str(part)
-    return solution
-
-
 if __name__ == "__main__":
     text = input("Podaj ciąg znaków:")
 
     x = letters_count(text)
-    print(final_parts_add(x))
-    
+    print("".join(x))
