@@ -1,4 +1,5 @@
-# 12:15pm-3:43am
+# 12:30pm-12:00am  == 690 min
+# 1:23am-1:08am == 1425 min 
 
 def get_time_indicator(time_string):
     start_hour, end_hour = time_string.split("-")
@@ -30,12 +31,17 @@ def count_minutes(hour, minutes):
 
 
 def minutes_difference(minutes1, minutes2):
-    return abs(minutes2 - minutes1)
+    if minutes1 < minutes2:
+        return (1440 - minutes1) + (1440 - minutes2)
+    elif minutes1 > minutes2:
+        return (1440 - minutes1) + minutes2
+    else:
+        return 1440
 
 
 if __name__ == "__main__":
     print("Example for time format: 12:40pm-4:23am")
-    time = input("Your minutes counter, between hours: ")
+    time = input("Your minutes counter, between hours: ").strip()
     time_indicators = get_time_indicator(time)
     hours, minutes = get_hours_and_minutes_from_string(time)
 
