@@ -1,6 +1,6 @@
 # wwwddeeeesfaawwww
-
-def letters_count(str_ex):
+from typing import List
+def letters_count(str_ex : str) -> List[str]:
     letter_tmp = str_ex[0]
     letter_counter = 0
     solutions = []
